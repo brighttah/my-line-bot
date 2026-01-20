@@ -7,8 +7,8 @@ import os
 app = Flask(__name__)
 
 # รับค่ารหัสจาก Environment Variable
-CHANNEL_ACCESS_TOKEN = os.environ.get('CHANNEL_ACCESS_TOKEN')
-CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
+CHANNEL_ACCESS_TOKEN = os.environ.get('UvGrICcJyheHcVNSj9jVefBx38KLn7ybBqOH0cDmR7A1gv1Z92Z7vA2GRFo2qAJoxMGhNlGKAlnjTYoOTdDwFV2JgiRBELao0RRh4eaO+1GX842K4dx8lIFCULvfa3m/KUeZDYMBUoRLwHDxBurS4QdB04t89/1O/w1cDnyilFU=')
+CHANNEL_SECRET = os.environ.get('936aa20567f7fe1c7c8192fb6eae4d70')
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
