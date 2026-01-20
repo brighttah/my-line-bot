@@ -43,195 +43,6 @@ flex_message_content = {
         ],
         "flex": 0
       }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ Gemini Pro" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "Gemini Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ Gemini Pro", "text": "สนใจ Gemini Pro" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ Canva Pro" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "Canva Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ Canva Pro", "text": "สนใจ Canva Pro" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ Perplexity" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "Perplexity", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ Perplexity", "text": "สนใจ Perplexity" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ CapCut Pro" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "CapCut Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ CapCut Pro", "text": "สนใจ CapCut Pro" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ Midjourney" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "Midjourney", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ Midjourney", "text": "สนใจ Midjourney" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สนใจ Claude Pro" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "Claude Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "สนใจ Claude Pro", "text": "สนใจ Claude Pro" } }
-        ],
-        "flex": 0
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://i.postimg.cc/PrwnXSSB/sw-sd-p-him.jpg",
-        "size": "full",
-        "aspectRatio": "1:1",
-        "aspectMode": "cover",
-        "action": { "type": "message", "label": "สนใจ", "text": "สอบถามเพิ่มเติม" }
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          { "type": "text", "text": "บริการอื่นๆ / สอบถาม", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          { "type": "button", "style": "primary", "height": "md", "color": "#42659C", "action": { "type": "message", "label": "ติดต่อแอดมิน", "text": "ติดต่อแอดมิน" } }
-        ],
-        "flex": 0
-      }
     }
   ]
 }
@@ -250,16 +61,22 @@ def callback():
         abort(400)
     return 'OK'
 
-# แก้ไขจุดผิด: เปลี่ยนจาก @app.event เป็น @handler.add
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_msg = event.message.text.lower()
     if "สินค้า" in user_msg or "ราคา" in user_msg or "สนใจ" in user_msg or "menu" in user_msg:
         flex_payload = FlexSendMessage(
-            alt_text='เลือกสินค้าโปรแกรมพรีเมียม',
+            alt_text='เลือกสินค้า',
             contents=flex_message_content
         )
         line_bot_api.reply_message(event.reply_token, flex_payload)
+    else:
+        # ตอบกลับข้อความทั่วไป (เพื่อทดสอบว่าบอทไม่ตาย)
+        from linebot.models import TextSendMessage
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="พิมพ์คำว่า 'สินค้า' เพื่อดูเมนูครับ")
+        )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
