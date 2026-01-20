@@ -1,19 +1,24 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage, TextSendMessage
 import os
 
 app = Flask(__name__)
 
-# รับค่ารหัสจาก Environment Variable
-CHANNEL_ACCESS_TOKEN = os.environ.get('UvGrICcJyheHcVNSj9jVefBx38KLn7ybBqOH0cDmR7A1gv1Z92Z7vA2GRFo2qAJoxMGhNlGKAlnjTYoOTdDwFV2JgiRBELao0RRh4eaO+1GX842K4dx8lIFCULvfa3m/KUeZDYMBUoRLwHDxBurS4QdB04t89/1O/w1cDnyilFU=')
-CHANNEL_SECRET = os.environ.get('936aa20567f7fe1c7c8192fb6eae4d70')
+# --- แก้ไขตรงนี้ให้ถูกต้อง ---
+# ใช้ชื่อ Key ให้ตรงกับที่ตั้งใน Render Environment Variables
+CHANNEL_ACCESS_TOKEN = os.environ.get('CHANNEL_ACCESS_TOKEN')
+CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
+
+# ตรวจสอบว่าดึงค่ามาได้จริงไหม (ถ้าไม่ได้จะ Error ตั้งแต่เริ่ม)
+if CHANNEL_ACCESS_TOKEN is None or CHANNEL_SECRET is None:
+    print("CRITICAL ERROR: Tokens not found in environment variables.")
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
 
-# โค้ด Flex Message (สินค้า 8 ใบ)
+# โค้ด Flex Message (สินค้า)
 flex_message_content = {
   "type": "carousel",
   "contents": [
@@ -72,7 +77,6 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_payload)
     else:
         # ตอบกลับข้อความทั่วไป
-        from linebot.models import TextSendMessage
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="พิมพ์คำว่า 'สินค้า' เพื่อดูเมนูครับ")
