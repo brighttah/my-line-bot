@@ -13,7 +13,7 @@ CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
 
-# โค้ด Flex Message (แก้ True เรียบร้อยแล้ว)
+# โค้ด Flex Message (สินค้า 8 ใบ)
 flex_message_content = {
   "type": "carousel",
   "contents": [
@@ -250,16 +250,16 @@ def callback():
         abort(400)
     return 'OK'
 
-@app.event(MessageEvent)
+# แก้ไขจุดผิด: เปลี่ยนจาก @app.event เป็น @handler.add
+@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    if isinstance(event.message, TextMessage):
-        user_msg = event.message.text.lower()
-        if "สินค้า" in user_msg or "ราคา" in user_msg or "สนใจ" in user_msg or "menu" in user_msg:
-            flex_payload = FlexSendMessage(
-                alt_text='เลือกสินค้าโปรแกรมพรีเมียม',
-                contents=flex_message_content
-            )
-            line_bot_api.reply_message(event.reply_token, flex_payload)
+    user_msg = event.message.text.lower()
+    if "สินค้า" in user_msg or "ราคา" in user_msg or "สนใจ" in user_msg or "menu" in user_msg:
+        flex_payload = FlexSendMessage(
+            alt_text='เลือกสินค้าโปรแกรมพรีเมียม',
+            contents=flex_message_content
+        )
+        line_bot_api.reply_message(event.reply_token, flex_payload)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
