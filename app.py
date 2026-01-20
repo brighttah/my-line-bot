@@ -6,14 +6,14 @@ import os
 
 app = Flask(__name__)
 
-# รับค่ารหัสจาก Environment Variable (เดี๋ยวเราไปตั้งใน Render)
+# รับค่ารหัสจาก Environment Variable
 CHANNEL_ACCESS_TOKEN = os.environ.get('CHANNEL_ACCESS_TOKEN')
 CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
 
-# โค้ด Flex Message (สินค้า 8 ใบ)
+# โค้ด Flex Message (แก้ True เรียบร้อยแล้ว)
 flex_message_content = {
   "type": "carousel",
   "contents": [
@@ -31,7 +31,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Chat GPT Plus & Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Chat GPT Plus & Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -58,7 +58,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Gemini Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Gemini Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -85,7 +85,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Canva Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Canva Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -112,7 +112,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Perplexity", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Perplexity", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -139,7 +139,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "CapCut Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "CapCut Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -166,7 +166,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Midjourney", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Midjourney", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -193,7 +193,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "Claude Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "Claude Pro", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -220,7 +220,7 @@ flex_message_content = {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          { "type": "text", "text": "บริการอื่นๆ / สอบถาม", "weight": "bold", "size": "xl", "color": "#000000", "wrap": true }
+          { "type": "text", "text": "บริการอื่นๆ / สอบถาม", "weight": "bold", "size": "xl", "color": "#000000", "wrap": True }
         ]
       },
       "footer": {
@@ -236,7 +236,6 @@ flex_message_content = {
   ]
 }
 
-# ส่วนตรวจสอบว่า LINE เรียกมาจริงไหม (ห้ามแก้)
 @app.route("/", methods=['GET'])
 def hello():
     return "Hello! Bot is running.", 200
@@ -251,13 +250,10 @@ def callback():
         abort(400)
     return 'OK'
 
-# ส่วนตอบกลับอัตโนมัติ
 @app.event(MessageEvent)
 def handle_message(event):
     if isinstance(event.message, TextMessage):
         user_msg = event.message.text.lower()
-        
-        # เงื่อนไข: ถ้าพิมพ์ว่า "สินค้า" หรือ "ราคา" ให้ส่งการ์ด
         if "สินค้า" in user_msg or "ราคา" in user_msg or "สนใจ" in user_msg or "menu" in user_msg:
             flex_payload = FlexSendMessage(
                 alt_text='เลือกสินค้าโปรแกรมพรีเมียม',
